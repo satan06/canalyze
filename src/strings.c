@@ -1,4 +1,13 @@
 #include <stdio.h>
+#include <strings.h>
+
+char *schr(const char *str, const char item)
+{
+    while(*str && *str != item) {
+        ++str;
+    }
+    return (*str) ? (char *) str : NULL;
+}
 
 char *strstr(char *hstack, char *ndle)
 {
