@@ -61,3 +61,11 @@ char *sstok(char *str, const char *delim)
     
     return str;
 }
+
+int scmp(const char *bhind, const char *abve)
+{
+    while (*bhind && *abve && *bhind == *abve) {
+        ++bhind, ++abve;   
+    }
+    return *bhind - *abve;
+}
