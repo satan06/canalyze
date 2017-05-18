@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <strings.h>
 
+int slen(const char *str) 
+{   
+    int length = 0;
+    
+    while(*str != '\0') {
+        ++length;
+        ++str;
+    }
+    return length;
+}
+
 char *schr(const char *str, const char item)
 {
     while(*str && *str != item) {
@@ -68,4 +79,14 @@ int scmp(const char *bhind, const char *abve)
         ++bhind, ++abve;   
     }
     return *bhind - *abve;
+}
+
+char *scpy(char *n_str, const char *i_str)
+{
+    while(*i_str) {
+        *n_str++ = *i_str++;    
+    } 
+    *n_str++ = '\0';
+    
+    return n_str;
 }
