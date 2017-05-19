@@ -15,3 +15,4 @@ int main(){
     func1(a); 
     func2(var1); 
 }
+

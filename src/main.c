@@ -5,7 +5,9 @@
 int main(int argc, char *argv[])
 {
 	if(scmp(argv[1], "lab.c") == 0) {
-		get_by_prttpe(argv[1]);
+		printf("Detected functions: \n");
+		get_by_descript(argv[1]);
+		get_main_spec(argv[1]);
 	} else {
 		printf("Usage:\n");
 		printf("canalize <in-file-name>\n");
