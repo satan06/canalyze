@@ -20,7 +20,7 @@ char *schr(const char *str, const char item)
     return (*str) ? (char *) str : NULL;
 }
 
-char *strstr(char *hstack, char *ndle)
+const char *strstr(char *hstack, char *ndle)
 {
   char *ndle_ptr = NULL, *hstack_ptr = NULL;
   int trigger_out = 1;

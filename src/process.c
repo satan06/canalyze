@@ -1,8 +1,10 @@
 #define DELIM " ()*{;"
+#define GRN "\x1B[32m"
+#define RESET "\x1B[0m"
 #include <stdio.h>
 #include <strings.h>
 
-int return_datype_valid(char *str)
+int return_datype_valid(const char *str)
 {
   if((scmp(str, "char") == 0) ||
     (scmp(str, "int") == 0) ||
@@ -32,7 +34,8 @@ int get_by_descript(char *in_file_name)
               a[i++] = sstok(NULL, DELIM);
             }
             if((return_datype_valid(a[0]) == 0) && (return_datype_valid(a[2]) == 0)) {
-              printf("\t%s\n", a[1]);
+              printf(GRN "-> " RESET);
+              printf("%s\n", a[1]);
             }
           }
       }
@@ -61,7 +64,8 @@ int get_main_spec(char *in_file_name)
             }
             if((return_datype_valid(a[0]) == 0) && (scmp(a[1], "main") == 0) && 
               (return_datype_valid(a[2]) == -1)) {
-              printf("\t%s\n", a[1]);
+              printf(GRN "-> " RESET);
+              printf("%s\n", a[1]);
 
               return 0;
             }
@@ -91,7 +95,8 @@ int get_by_prttp(char *in_file_name)
               a[i++] = sstok(NULL, DELIM);
             }
             if((return_datype_valid(a[0]) == 0) && (return_datype_valid(a[2]) == 0)) {
-              printf("\t%s\n", a[1]);
+              printf(GRN "-> " RESET);
+              printf("%s\n", a[1]);
             }
           }
       }
