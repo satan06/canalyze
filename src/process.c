@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <strings.h>
 
-int return_datype_valid(char *str)
+int return_datype_valid(const char *str)
 {
   if((scmp(str, "char") == 0) ||
     (scmp(str, "int") == 0) ||
