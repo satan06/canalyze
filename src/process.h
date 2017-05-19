@@ -2,7 +2,8 @@
 #define PROCESS_H
 
 int return_datype_valid(char *str);
-char *get_by_descript(char *in_file_name);
-char *get_main_spec(char *in_file_name);
+int get_by_descript(char *in_file_name);
+int get_main_spec(char *in_file_name);
+int get_by_prttp(char *in_file_name);
 
 #endif//PROCESS_H
