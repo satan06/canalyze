@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/satan06/canalyze.svg?branch=master)](https://travis-ci.org/satan06/canalyze)# canalyze
+[![Build Status](https://travis-ci.org/satan06/canalyze.svg?branch=master)](https://travis-ci.org/satan06/canalyze)
 
 WARNING! WORK STILL IN PROGRESS!
 
@@ -39,6 +39,5 @@ On display:
 	
 	func1:    called 2 times 
 	func2:    called 1 time
-	main:     called 0 times
+	 main:    called 0 times
 
-	
