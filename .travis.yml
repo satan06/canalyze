@@ -1,0 +1,13 @@
+language: c
+
+install: 
+  - make
+
+script:
+  - bin/canalize-test
+
+after_success:
+  - make clean
+
+after_failure: 
+- make clean
