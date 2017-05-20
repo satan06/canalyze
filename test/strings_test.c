@@ -62,3 +62,34 @@ CTEST(scmp_test, str_not_equal)
 	const int expected = 0;
 	ASSERT_NOT_EQUAL(expected, result);
 }
+
+CTEST(strstr_test, find_token_ok)
+{
+    const char *str = "function_one(var);";
+    const char *token = "function_one";
+
+    const char *result = strstr(str, token); 
+
+    const char *expected = "function_one";
+    ASSERT_STR(expected, result);
+}
+
+CTEST(strstr_test, find_token_null_fail)
+{
+    const char *str = "function_one(var);";
+    const char *token = NULL;
+
+    const char *result = strstr(str, token); 
+
+    ASSERT_NULL(result);
+}
+
+CTEST(strstr_test, str_null_find_token_fail)
+{
+    const char *str = NULL;
+    const char *token = "smtoken";
+
+    const char *result = strstr(str, token); 
+
+    ASSERT_NULL(result);
+}
