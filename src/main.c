@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	if(scmp(argv[1], "lab.c") == 0) {
 		if(argv[1] != NULL) {
-			printf("Detected functions: \n");
+			printf("Detected functions / call times: \n");
 			printf("\n");
 			printf("Declared via"GRN" prototype"RESET":\n");
 			get_by_prttp(argv[1]);
