@@ -20,7 +20,7 @@ char *schr(const char *str, const char item)
     return (*str) ? (char *) str : NULL;
 }
 
-const char *strstr(char *hstack, char *ndle)
+const char *strstr(const char *hstack, const char *ndle)
 {
   if(hstack == NULL || ndle == NULL) {
     return NULL;    
@@ -30,7 +30,7 @@ const char *strstr(char *hstack, char *ndle)
     while(hstack != ndle) {
       ++hstack;
     }
-    return hstack;              
+    return hstack;            
   }
   return NULL;
 }
