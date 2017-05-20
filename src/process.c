@@ -20,8 +20,8 @@ int return_datype_valid(const char *str)
 int get_by_descript(char *in_file_name)
 {
 	FILE *input_file = fopen(in_file_name, "r");
-	int i = 0, buffer = 100;
-	char str[buffer], *a[buffer];
+	int i = 0, k = 0, buffer = 100, count = 0;
+	char str[buffer], *a[buffer], *cll[buffer];
 
     if (input_file != NULL) {
     	while (!feof(input_file)) {
@@ -34,8 +34,18 @@ int get_by_descript(char *in_file_name)
               a[i++] = sstok(NULL, DELIM);
             }
             if((return_datype_valid(a[0]) == 0) && (return_datype_valid(a[2]) == 0)) {
+              if(schr(str, '(') && schr(str, ')') && schr(str, ';')) {
+                cll[k++] = sstok(str, DELIM);
+
+                while(a[k - 1] != NULL) {
+                  cll[k++] = sstok(NULL, DELIM);
+                }
+                if(scmp(a[1], cll[0]) == 0) {
+                  count++;
+                }
+              }
               printf(GRN "-> " RESET);
-              printf("%s\n", a[1]);
+              printf("%s: called %d times\n", a[1], count);
             }
           }
       }
@@ -49,8 +59,8 @@ int get_by_descript(char *in_file_name)
 int get_main_spec(char *in_file_name)
 {
   FILE *input_file = fopen(in_file_name, "r");
-  int i = 0, buffer = 100;
-  char str[buffer], *a[buffer];
+  int i = 0, k = 0, buffer = 100, count = 0;
+  char str[buffer], *a[buffer], *cll[buffer];
 
     if (input_file != NULL) {
       while (!feof(input_file)) {
@@ -64,10 +74,18 @@ int get_main_spec(char *in_file_name)
             }
             if((return_datype_valid(a[0]) == 0) && (scmp(a[1], "main") == 0) && 
               (return_datype_valid(a[2]) == -1)) {
-              printf(GRN "-> " RESET);
-              printf("%s\n", a[1]);
+              if(schr(str, '(') && schr(str, ')') && schr(str, ';')) {
+                cll[k++] = sstok(str, DELIM);
 
-              return 0;
+                while(a[k - 1] != NULL) {
+                  cll[k++] = sstok(NULL, DELIM);
+                }
+                if(scmp(a[1], cll[0]) == 0) {
+                  count++;
+                }
+              }
+              printf(GRN "-> " RESET);
+              printf("%s: called %d times\n", a[1], count);
             }
           }
       }
@@ -81,8 +99,8 @@ int get_main_spec(char *in_file_name)
 int get_by_prttp(char *in_file_name)
 {
   FILE *input_file = fopen(in_file_name, "r");
-  int i = 0, buffer = 100;
-  char str[buffer], *a[buffer];
+  int i = 0, k = 0, buffer = 100, count = 0;
+  char str[buffer], *a[buffer], *cll[buffer];
 
     if (input_file != NULL) {
       while (!feof(input_file)) {
@@ -95,8 +113,18 @@ int get_by_prttp(char *in_file_name)
               a[i++] = sstok(NULL, DELIM);
             }
             if((return_datype_valid(a[0]) == 0) && (return_datype_valid(a[2]) == 0)) {
+              if(schr(str, '(') && schr(str, ')') && schr(str, ';')) {
+                cll[k++] = sstok(str, DELIM);
+
+                while(a[k - 1] != NULL) {
+                  cll[k++] = sstok(NULL, DELIM);
+                }
+                if(scmp(a[1], cll[0]) == 0) {
+                  count++;
+                }
+              }
               printf(GRN "-> " RESET);
-              printf("%s\n", a[1]);
+              printf("%s: called %d times\n", a[1], count);
             }
           }
       }
