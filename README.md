@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/satan06/canalyze.svg?branch=master)](https://travis-ci.org/satan06/canalyze)
 
-WARNING! WORK STILL IN PROGRESS!
+WARNING!!
 
-	Function "call-counter" implementation required!
+	Function "call-counter" a bit unstable!
 
 Program "canalyze" analysis programs in C. The command "./canalyze" takes the input file name containing the program in the language C. The contents of the input file is subjected to a static analysis, the results of which are printed on the screen.
 
